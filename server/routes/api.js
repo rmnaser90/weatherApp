@@ -3,47 +3,43 @@ const WeatherApi = require('./services')
 const weatherApi = new WeatherApi
 const router = express.Router()
 const moment = require('moment')
-const mongoose = require('mongoose')
 const City = require('../models/city')
 
-
-
-
-router.get('/weather/:city', async function (req,res) {
-    const {city} = req.params
+router.get('/weather/:city', async function (req, res) {
+    const { city } = req.params
     const result = await weatherApi.getWetherBycity(city)
-
     const weather = {
         name: result.data.name,
         temprature: result.data.main.temp,
         condition: result.data.weather[0].description,
         conditionPic: `http://openweathermap.org/img/wn/${result.data.weather[0].icon}.png`,
-        date : new Date()
+        date: new Date()
     }
-    res.send(weather)
+    const newWeather = new City(weather)
+    res.send(newWeather)
 })
 
-router.get('/cities', async function (req,res) {
+router.get('/cities', async function (req, res) {
     const result = await City.find({})
-    
-res.send(result)
+    res.send(result)
 })
 
-router.post('/city', function (req,res) {
+router.post('/city', async function (req, res) {
     const requestCity = req.body
     const city = new City(requestCity)
-    city.save().then(function (err,result) {
-        res.send(result)
-    })
+    const isExist = await City.findOne(city)
+    if (isExist) {
+        res.send("already saved")
+    } else {
+        city.save().then(function (err, result) {
+            res.send(result)
+        })
+    }
 })
 
-router.delete('/city/:name', async function (req,res) {
+router.delete('/city/:name', async function (req, res) {
     const cityName = req.params
     const result = await City.findOneAndDelete(cityName)
     res.send(result)
 })
-
-
-
-
 module.exports = router

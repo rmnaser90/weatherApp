@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,47 @@
     <link rel="stylesheet" href="mobileStyle.css">
     <title>Weather App</title>
 </head>
+
 <body>
-    
 
-<div id="mainContainer">
-    <h1>weather app</h1>
-    <div id="searchBox">
-        <input type="text" id="searchInput" placeholder="Enter a city">
-        <button id="searchBtn">search</button>
-        <div id="searchResult">
 
+    <div id="mainContainer">
+        <h1>weather app</h1>
+        <div id="searchBox">
+            <input type="text" id="searchInput" placeholder="Enter a city">
+            <button id="searchBtn">search</button>
+            <div id="searchResult">
+
+            </div>
+            <div id="favCitiesContainer">
+
+            </div>
         </div>
+
+
     </div>
 
-
+    <script id="search-template" type="text/x-handlebars-template">
+    <div class="resultCity" data-id="{{_id}}">
+<h2 class="searchCityName">{{name}}</h2>
+<h1 class="addToFavBtn">+</h1>
+<img class="searchConditionImg" src="{{conditionPic}}" alt="">
+<h3 class="searchTemprature">{{temprature}}</h3>
+<h4 class="searchCondition">{{condition}}</h4>
 </div>
+</script>
 
-<script id="search-template" type="text/x-handlebars-template">
-<h2>{{name}}</h2>
-<img src="{{conditionPic}}" alt="">
-<h3>{{temprature}}</h3>
-<h4>{{condition}}</h4>
-
+<script id="fav-template" type="text/x-handlebars-template">
+{{#each cities}}
+<div class="favCity" data-id="{{_id}}">
+    <h1 class="removeFromFavBtn">-</h1>
+    <h3 class="favCityName">{{name}}</h3>
+    <img src="{{conditionPic}}" class="favConditionImg" alt="">
+    <h4 class="favTemprature">{{temprature}}</h3>
+        <h5 class="favCondition">{{condition}}
+    </h4>
+</div>
+{{/each}}
 </script>
 
     <script src="jquery/dist/jquery.js"></script>
@@ -38,4 +58,6 @@
     <script src="logic.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
+
