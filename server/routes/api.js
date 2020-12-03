@@ -12,7 +12,7 @@ router.get('/weather/:city', async function (req, res) {
         name: result.data.name,
         temprature: result.data.main.temp,
         condition: result.data.weather[0].description,
-        conditionPic: `http://openweathermap.org/img/wn/${result.data.weather[0].icon}.png`,
+        conditionPic: `https://openweathermap.org/img/wn/${result.data.weather[0].icon}.png`,
         date: new Date()
     }
     const newWeather = new City(weather)
