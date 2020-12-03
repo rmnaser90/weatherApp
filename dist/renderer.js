@@ -3,7 +3,7 @@ class Renderer {
     renderSearchData(city) {
         const searchResult = $('#searchResult')
         searchResult.empty()
-        $('.body').css('background-image' ,`url("${city.photoUrl}")`)
+        $('.body').attr('src' ,`${city.photoUrl}`)
         const source = $('#search-template').html()
         const template = Handlebars.compile(source)
         const html = template(city)

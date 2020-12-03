@@ -1,10 +1,63 @@
 @media only screen and (max-width: 770px) {
-.resultCity{
+
+    @keyframes example {
+        from {
+            opacity: 0; 
+        }
+        to {
+           display: 1;
+        }
+      }
+#mainContainer{
+    padding-top: 20px;
+    width: 100%;
+}
+
+#searchBox{
     width: 100%;
     position: relative;
-    display: grid;
-    align-items: center;
-    justify-items: center;
+}
+
+#searchInput{
+    width: 84%;
+    height: 30px;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgba(255, 253, 253, 0.3);
+    border-bottom: 2px solid rgb(114, 109, 109);
+}
+#searchBtn{
+    font-size: 150%;
+    position: absolute;
+    right: 10%;
+    top: 3px;
+    color: rgb(114, 109, 109);
+}
+
+#searchResult{
+    font-size: 150%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.resultCity{
+    width: 100%;
+     position: relative;
+     display: grid;
+     align-items: center;
+     justify-items: center;
+     animation-name: example;
+    animation-duration: 1s;
+ }
+  
+.searchCityName{
+    margin: 5px;
+}
+.searchConditionImg{
+    width: 20vw;
+    height: auto;
 }
 .addToFavBtn{
     position: absolute;
@@ -20,39 +73,66 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 4px;
+  justify-items: center;
 }
 .favCity{
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(255, 253, 253, 0.555);
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 0px 0px 8px black;
     position: relative;
     display: grid;
     align-items: center;
     justify-items: center;
+    width: 80%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    animation-name: example;
+    animation-duration: 1s;
 }
+
 .removeFromFavBtn{
+    display: block;
     position: absolute;
     right: 2px;
     top:2px;
+    margin: 0px;
+}
+.favCityName{
+    margin: 0px;
+}
+.favTemprature{
+    margin: 0px;
+    
+}
+.favCondition{
     margin: 0px;
 }
 .removeFromFavBtn:active{
     font-size: 250%;
    
 }
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    background-color: peachpuff;
+    position: relative;
+    width: 100vw;
+    color: rgb(29, 27, 27);
+}
+
   
   .body{
-      width: 100%;
-    background-color: white; /* Used if the image is unavailable */
+    animation-name: example;
+    animation-duration: 1s;
+    display: block;
+    justify-self: center;
     height: 100vh;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-    opacity: 0.9;
+    opacity: 0.5;
     top: 0;
-    left: 0;
+    left: 0px;
     bottom: 0;
-    right: 0;
+    min-width: 100%;
     position: fixed;
     z-index: -1;   
   }
