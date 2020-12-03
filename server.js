@@ -5,7 +5,7 @@ const path = require('path')
 const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/weatherApp', { useNewUrlParser: true, useFindAndModify: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weatherApp', { useNewUrlParser: true, useFindAndModify: true })
 const City = require('./server/models/city.js')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -23,7 +23,7 @@ app.use('/', api)
 
 
 
-const port = 3000
+const port = process.env.PORT || 3000
 app.listen(port, function () {
     console.log(`Running on port ${port}`)
 })
