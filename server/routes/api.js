@@ -11,7 +11,7 @@ router.get('/weather/:city', async function (req, res) {
     const photoUrl = await weatherApi.getCityPhoto(city)
     const weather = {
         name: result.data.name,
-        temprature: Math.floor(result.data.main.temp) +' °C',
+        temprature: Math.floor(result.data.main.temp) +'°',
         condition: result.data.weather[0].description,
         conditionPic: `https://openweathermap.org/img/wn/${result.data.weather[0].icon}.png`,
         photoUrl,

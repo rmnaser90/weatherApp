@@ -36,17 +36,22 @@
     <script id="search-template" type="text/x-handlebars-template">
     <div class="resultCity" data-id="{{_id}}">
 <h2 class="searchCityName">{{name}}</h2>
-<h1 class="addToFavBtn">+</h1>
-<img class="searchConditionImg" src="{{conditionPic}}" alt="">
-<h3 class="searchTemprature">{{temprature}}</h3>
 <h4 class="searchCondition">{{condition}}</h4>
+<div class="addToFavBtn"><i class="fas fa-plus"></i>
+
+</div>
+<img class="searchConditionImg" src="{{conditionPic}}" alt="">
+<h2 class="searchTemprature">{{temprature}}</h2>
+
 </div>
 </script>
 
 <script id="fav-template" type="text/x-handlebars-template">
 {{#each cities}}
 <div class="favCity" data-id="{{_id}}">
-    <h1 class="removeFromFavBtn">-</h1>
+    <div class="removeFromFavBtn"><i class="fas fa-minus"></i>
+
+    </div>
     <h3 class="favCityName">{{name}}</h3>
     <img src="{{conditionPic}}" class="favConditionImg" alt="">
     <h4 class="favTemprature">{{temprature}}</h3>

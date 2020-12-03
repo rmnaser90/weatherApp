@@ -36,7 +36,5 @@ $('#searchResult').on('click', '.addToFavBtn', function () {
 $('#favCitiesContainer').on('click', '.removeFromFavBtn', function () {
     $(this).closest('.favCity').css('display', 'none')
     const cityName = $(this).closest('.favCity').find('.favCityName').text()
-    weatherApp.removeFromFavCity(cityName).then(function (res) {
-        renderer.renderFavCities(res)
-    })
+    weatherApp.removeFromFavCity(cityName)
 })
