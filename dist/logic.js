@@ -17,6 +17,10 @@ class WeatherAPP{
                 return true
             }
         }
+        findById(id){
+            const city = this.data.find(c => c._id == id)
+            return city
+        }
     async loadFavCities(){
         const result = await this.apiManger.getFavCities()
         this.data = result

@@ -38,3 +38,10 @@ $('#favCitiesContainer').on('click', '.removeFromFavBtn', function () {
     const cityName = $(this).closest('.favCity').find('.favCityName').text()
     weatherApp.removeFromFavCity(cityName)
 })
+
+$('#favCitiesContainer').on('click', '.favCity', function () {
+    const id =$(this).data('id')
+    const city = weatherApp.findById(id)
+    weatherApp.searchCity=city
+    renderer.renderSearchData(city)
+})
