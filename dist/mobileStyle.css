@@ -41,9 +41,21 @@
     font-size: 250%;
    
 }
-
-
-
+  
+  .body{
+      width: 100%;
+    background-color: white; /* Used if the image is unavailable */
+    height: 100vh;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+  }
 
 
 

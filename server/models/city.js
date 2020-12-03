@@ -6,6 +6,7 @@ const citySchema= new Schema({
     temprature: Number,
     conditionPic: String,
     condition: String,
+    photoUrl: String,
     date: Date
 })
 

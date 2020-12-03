@@ -3,6 +3,7 @@ const renderer = new Renderer
 
 
 weatherApp.loadFavCities().then(function (cities) {
+    renderer.renderSearchData(cities[0])
     renderer.renderFavCities(cities)
 })
 

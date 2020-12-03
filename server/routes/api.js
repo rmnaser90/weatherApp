@@ -8,11 +8,13 @@ const City = require('../models/city')
 router.get('/weather/:city', async function (req, res) {
     const { city } = req.params
     const result = await weatherApi.getWetherBycity(city)
+    const photoUrl = await weatherApi.getCityPhoto(city)
     const weather = {
         name: result.data.name,
         temprature: result.data.main.temp,
         condition: result.data.weather[0].description,
         conditionPic: `https://openweathermap.org/img/wn/${result.data.weather[0].icon}.png`,
+        photoUrl,
         date: new Date()
     }
     const newWeather = new City(weather)
