@@ -162,6 +162,7 @@ body{
   #signature{
       font-size: 120%;
     float: right;
+    margin-right: 10px;
     font-family: 'Dancing Script', cursive;
   }
 
