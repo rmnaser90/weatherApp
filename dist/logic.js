@@ -7,6 +7,16 @@ class WeatherAPP{
         this.searchCity={}
     }
 
+        tempAddToFav(city){
+            const ifExist = this.data.find(c => city.name == c.name)
+            if (ifExist) {
+                console.log('already fav');
+                return false
+            }else{
+                this.data.push(city)
+                return true
+            }
+        }
     async loadFavCities(){
         const result = await this.apiManger.getFavCities()
         this.data = result

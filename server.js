@@ -5,21 +5,13 @@ const path = require('path')
 const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weatherApp', { useNewUrlParser: true, useFindAndModify: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://rmnaser90:Shiningstar0190@cluster0.ojr9d.mongodb.net/weatherApp?retryWrites=true&w=majority', { useNewUrlParser: true, useFindAndModify: true })
 const City = require('./server/models/city.js')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 app.use('/', api)
-
-
-
-
-
-
-
-
 
 
 

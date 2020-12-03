@@ -27,7 +27,7 @@ router.get('/cities', async function (req, res) {
 router.post('/city', async function (req, res) {
     const requestCity = req.body
     const city = new City(requestCity)
-    const isExist = await City.findOne(city)
+    const isExist = await City.findOne({name: city.name})
     if (isExist) {
         res.send("already saved")
     } else {

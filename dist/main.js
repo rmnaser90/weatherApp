@@ -3,7 +3,7 @@ const renderer = new Renderer
 
 
 weatherApp.loadFavCities().then(function (cities) {
-renderer.renderFavCities(cities)
+    renderer.renderFavCities(cities)
 })
 
 $('#searchBtn').on('click', async function () {
@@ -14,13 +14,15 @@ $('#searchBtn').on('click', async function () {
     renderer.renderSearchData(city)
 })
 
-$('#searchResult').on('click','.addToFavBtn',function () {
-    weatherApp.addToFavCities(weatherApp.searchCity).then(function (res) {
-        renderer.renderFavCities(res)
-    })
+$('#searchResult').on('click', '.addToFavBtn', function () {
+    if (weatherApp.tempAddToFav(weatherApp.searchCity)) {
+        renderer.renderFavCities(weatherApp.data)
+        weatherApp.addToFavCities(weatherApp.searchCity)
+    }
 })
 
-$('#favCitiesContainer').on('click','.removeFromFavBtn',function () {
+$('#favCitiesContainer').on('click', '.removeFromFavBtn', function () {
+    $(this).closest('.favCity').css('display', 'none')
     const cityName = $(this).closest('.favCity').find('.favCityName').text()
     weatherApp.removeFromFavCity(cityName).then(function (res) {
         renderer.renderFavCities(res)
