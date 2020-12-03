@@ -23,7 +23,7 @@ class WeatherAPP{
         }
     async loadFavCities(){
         const result = await this.apiManger.getFavCities()
-        this.data = result
+        this.data = result 
         return this.data
     }
     async addToFavCities(city){

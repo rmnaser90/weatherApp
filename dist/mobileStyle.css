@@ -89,7 +89,7 @@
 .favCity{
     background-color: rgba(255, 253, 253, 0.589);
     border-radius: 10px;
-    box-shadow: 0px 0px 8px black;
+    box-shadow: 0px 0px 8px  black;
     position: relative;
     display: grid;
     align-items: center;
@@ -99,6 +99,15 @@
     margin-bottom: 20px;
     animation-name: example;
     animation-duration: 1s;
+    text-align: center;
+    transition: 0.4s;
+}
+.favCity:hover{
+    position: relative;
+    width: 90%;
+    padding-bottom: 15px;
+    background-color: rgba(255, 253, 253, 0.774);
+    box-shadow: 0px 0px 12px 2px black;
 }
 
 .removeFromFavBtn{
@@ -149,6 +158,11 @@ body{
     min-width: 100%;
     position: fixed;
     z-index: -1;   
+  }
+  #signature{
+      font-size: 120%;
+    float: right;
+    font-family: 'Dancing Script', cursive;
   }
 
 
