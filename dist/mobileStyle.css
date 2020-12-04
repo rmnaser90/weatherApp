@@ -186,7 +186,7 @@ body{
     padding-top: 20vh;
     animation-name: zoomIn;
     animation-duration: 3s;
-    animation-delay: 0.5s;
+    animation-delay: 0.6s;
     justify-self: center;
     height: 106vh;
     background-color: white;
