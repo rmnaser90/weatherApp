@@ -159,6 +159,46 @@ body{
     position: fixed;
     z-index: -1;   
   }
+  @keyframes zoomIn {
+    from {
+        font-size: 0px;
+        z-index: 99; 
+    }
+    to {
+       font-size: 16vw;
+    }
+  }
+  @keyframes dissappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+  }
+  .logo{
+      width: 30vw;
+  }
+  #enterLogo{
+    font-size: 16vw;
+    display: grid;
+    justify-items: center;
+    padding-top: 20vh;
+    animation-name: zoomIn;
+    animation-duration: 3s;
+    justify-self: center;
+    height: 106vh;
+    background-color: white;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    min-width: 100%;
+    position: fixed;
+    z-index: 99;  
+    transform: 1s;
+    
+  }
+
   #signature{
       font-size: 120%;
     float: right;
