@@ -61,11 +61,11 @@
     margin-bottom: 2vh;
 }
 .searchConditionImg{
-    width: 20vw;
+    width: 35vw;
     height: auto;
 }
 .searchTemprature{
-    margin-top: 1vh;
+    margin-top: 0px;
     margin-bottom: 2vh;
 }
 .addToFavBtn{
@@ -126,6 +126,9 @@
 .favCityName{
     margin: 0px;
     margin-top: 25px;
+}
+.favConditionImg{
+    width: 40%;
 }
 .favTemprature{
     margin: 0px;

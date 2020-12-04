@@ -13,7 +13,7 @@ router.get('/weather/:city', async function (req, res) {
         name: result.data.name,
         temprature: Math.floor(result.data.main.temp) +'°',
         condition: result.data.weather[0].description,
-        conditionPic: `https://openweathermap.org/img/wn/${result.data.weather[0].icon}.png`,
+        conditionPic: `animated/${result.data.weather[0].icon}.svg`,
         photoUrl,
         date: new Date()
     }
