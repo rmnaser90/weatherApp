@@ -9,3 +9,16 @@ setTimeout(function () {
     enterLogo.css('animation-name','dissappear')
     
 },3300)
+
+const startMoving = function (background) {
+background=$(background)
+    let distance = Math.floor(background.width() -  $('#mainContainer').width());
+    const time = distance/8
+    distance=`left: -${distance}px;`
+    const styleSheet = document.styleSheets
+    styleSheet[1].cssRules[1][1].style.cssText= distance
+    background.css('animation-duration',`${time}s`)
+   background.css('animation-name','moveRight')
+    
+
+}

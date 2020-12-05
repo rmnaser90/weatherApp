@@ -49,3 +49,6 @@ $('#favCitiesContainer').on('click', '.favCity', function () {
     weatherApp.searchCity=city
     renderer.renderSearchData(city)
 })
+
+const background = document.querySelector('#background')
+
