@@ -50,6 +50,7 @@
     font-size: 150%;
     margin-bottom: 30px;
     margin-top: 20px;
+    min-height: 20vh;
 }
 .resultCity{
     width: 100%;
