@@ -8,6 +8,15 @@
            display: 1;
         }
       }
+
+      @keyframes moveRight {
+        from {
+            left: 0px; 
+        }
+        to {
+           left: -800px;
+        }
+      }
 #mainContainer{
     padding-top: 20px;
     width: 100%;
@@ -150,8 +159,8 @@ body{
 
   
   .body{
-    animation-name: example;
-    animation-duration: 1s;
+    animation-name: moveRight;
+    animation-duration: 120s;
     display: block;
     justify-self: center;
     height: 106vh;
