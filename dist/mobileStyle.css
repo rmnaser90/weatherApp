@@ -159,14 +159,12 @@ body{
 
   
   .body{
-    animation-name: moveRight;
-    animation-duration: 120s;
     display: block;
     justify-self: center;
     height: 106vh;
     opacity: 0.5;
     top: 0;
-    right: 0px;
+    left: 0px;
     bottom: 0;
     min-width: 100%;
     position: fixed;
