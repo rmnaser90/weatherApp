@@ -13,7 +13,7 @@ setTimeout(function () {
 const startMoving = function (background) {
 
     background=$(background)
-        let distance = Math.floor(background.width() -  $('#mainContainer').width());
+        let distance = Math.floor(background.width() -  $('#mainContainer').width())- 20;
         const time = distance/8
         distance=`left: -${distance}px;`
         const styleSheet = document.styleSheets
