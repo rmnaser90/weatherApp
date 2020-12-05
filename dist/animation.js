@@ -11,6 +11,7 @@ setTimeout(function () {
 },3300)
 
 const startMoving = function (background) {
+  styleSheet[1].cssRules[1][1].style.cssText= `left: -800px;`
   setTimeout(function () {
     
     background=$(background)
