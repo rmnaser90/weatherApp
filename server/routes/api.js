@@ -37,6 +37,7 @@ const updateDbHourly = async function () {
 }
 
 const hour = 1000 * 60 * 60
+
 setInterval(updateDbHourly, hour)
 
 
@@ -71,6 +72,7 @@ router.get('/weather/:city', async function (req, res) {
 })
 
 router.get('/cities', async function (req, res) {
+    updateDbHourly()
     const result = await City.find({})
     res.send(result)
 })
