@@ -4,7 +4,6 @@ const weatherApi = new WeatherApi
 const router = express.Router()
 const moment = require('moment')
 const City = require('../models/city')
-const { data } = require('jquery')
 
 const updateDbHourly = async function () {
     const result = await City.find({}, { _id: 0, openWeatherId: 1 })
