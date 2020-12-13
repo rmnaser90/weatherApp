@@ -71,6 +71,7 @@ router.post('/geoWeather/', async function (req, res) {
     if (ifExist) {
         res.send(ifExist)
     } else {
+        console.log(coord);
         const result = await weatherApi.getGeoWeather(coord.lat, coord.lon)
         const city = result.data.name
         const photoUrl = await weatherApi.getCityPhoto(city)
