@@ -8,11 +8,7 @@ if (navigator.geolocation) {
          lat: position.coords.latitude,
          lon: position.coords.longitude
      }
-     $('#coordsBox').append($(`
-     <p>lattitude: ${weatherApp.coords.lat} </p>
-     <p>longitude: ${weatherApp.coords.lon} </p>
-     
-     `))
+    
      weatherApp.getCityByCoord().then(function (city) {
        if (city) {
          renderer.renderSearchData(city)

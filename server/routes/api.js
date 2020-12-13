@@ -44,7 +44,16 @@ router.get('/weather/:city', async function (req, res) {
         res.send(ifExist)
     } else {
         const result = await weatherApi.getWetherBycity(city)
-        const photoUrl = await weatherApi.getCityPhoto(city)
+        let photoUrl
+        try {
+            photoUrl = await weatherApi.getCityPhoto(city)
+           
+       } catch (error) {
+           console.log(error);
+           photoUrl = "https://wallpaperset.com/w/full/3/b/2/266685.jpg"
+           
+       }
+        
         const weather = {
             name: result.data.name,
             coord: result.data.coord,
@@ -74,7 +83,15 @@ router.post('/geoWeather/', async function (req, res) {
         console.log(coord);
         const result = await weatherApi.getGeoWeather(coord.lat, coord.lon)
         const city = result.data.name
-        const photoUrl = await weatherApi.getCityPhoto(city)
+        let photoUrl
+        try {
+             photoUrl = await weatherApi.getCityPhoto(city)
+            
+        } catch (error) {
+            console.log(error);
+            photoUrl = "https://wallpaperset.com/w/full/3/b/2/266685.jpg"
+            
+        }
         const weather = {
             name: result.data.name,
             coord: result.data.coord,
