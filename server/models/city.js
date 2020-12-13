@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const citySchema= new Schema({
     name: String,
+    coord: Object,
     openWeatherId: Number,
     temprature: String,
     conditionPic: String,

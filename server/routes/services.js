@@ -17,6 +17,12 @@ class WeatherApi {
         citiesIds=citiesIds.toString()
         return  this.axios.get(`https://api.openweathermap.org/data/2.5/group?id=${citiesIds}&appid=${this.apiKey}&units=metric`)
     }
+    async getGeoWeather(lat,lon) {
+        
+        return  this.axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric`)
+    }
+
+
 }
 
 module.exports = WeatherApi

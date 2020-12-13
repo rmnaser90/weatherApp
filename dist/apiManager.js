@@ -10,7 +10,7 @@ class ApiManager{
 
     async addToFavCities(city){
 
-    return await $.post('/city',city)
+    return await $.post('/city',{city})
     }
 
     async deleteCity(cityName){
@@ -18,6 +18,10 @@ class ApiManager{
             method: "DELETE",
             url: `/city/${cityName}`
         })
+    }
+    async getCityByCoords(coord){
+         const city = await $.post(`/geoWeather`, coord)
+         return city
     }
 }
 
