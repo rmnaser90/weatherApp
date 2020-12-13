@@ -50,7 +50,7 @@ router.get('/weather/:city', async function (req, res) {
            
        } catch (error) {
            console.log(error);
-           photoUrl = "https://wallpaperset.com/w/full/3/b/2/266685.jpg"
+           photoUrl = "/default.jpg"
            
        }
         
@@ -89,7 +89,7 @@ router.post('/geoWeather/', async function (req, res) {
             
         } catch (error) {
             console.log(error);
-            photoUrl = "https://wallpaperset.com/w/full/3/b/2/266685.jpg"
+            photoUrl = "/default.jpg"
             
         }
         const weather = {

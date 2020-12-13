@@ -26,11 +26,6 @@ class WeatherApi {
 
 module.exports = WeatherApi
 
-// const axios =require('axios')
-
-// axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=31.816592397140372&lon=35.23318586824766&appid=30156403e79bb0f073dd5cfe98bfd831&units=metric`).then(function (res) {
-//     console.log(res.data);
-// })
 
 
 
